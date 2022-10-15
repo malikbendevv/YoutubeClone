@@ -9,6 +9,7 @@ import {
   demoChannelUrl,
   demoChannelTitle,
 } from "../utils/constants";
+
 const VideoCard = ({
   video: {
     id: { videoId },
@@ -18,7 +19,7 @@ const VideoCard = ({
   return (
     <Card
       sx={{
-        width: { md: "320px", xs: "350px" },
+        width: { xs: "350px", md: "320px" },
         boxShadow: "none",
         borderRadius: 0,
       }}
@@ -33,7 +34,7 @@ const VideoCard = ({
       <CardContent sx={{ backgroundColor: "#1e1e1e", height: "106px" }}>
         <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
           <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
-            {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
+            {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)} ...
           </Typography>
         </Link>
         <Link
@@ -44,7 +45,7 @@ const VideoCard = ({
           }
         >
           <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
-            {snippet?.channemTitle?.slice(0, 60) ||
+            {snippet?.channelTitle?.slice(0, 60) ||
               demoChannelTitle?.slice(0, 60)}
             <CheckCircle sx={{ fontSize: 12, color: "gray", ml: "5px" }} />
           </Typography>
